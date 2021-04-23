@@ -42,13 +42,6 @@ export const RightContainer = styled.div`
     }
 `;
 
-export const VideosContainer = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
-`;
-
 export const Title = styled.h1`
     color: ${props => props.theme.favoritesView.titleColor};
     display: flex;

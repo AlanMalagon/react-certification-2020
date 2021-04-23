@@ -1,16 +1,18 @@
 import React from 'react';
 import { useAuth0 } from "@auth0/auth0-react";
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useGlobal } from '../../providers/Global.provider';
-import { VideoGridItem } from '../VideosGrid/VideoGridItem/VideoGridItem.component';
-import { ProfileCard } from '../ProfileCard/ProfileCard.component';
-import { ProfileCardAuth0 } from '../ProfileCardAuth0/ProfileCardAuth0.component';
-import { Container, LeftContainer, LogoutContainer, RightContainer, Title, VideosContainer, GlobalStyle } from './FavoriteVideos.styles';
+import { ProfileCard } from '../../components/ProfileCard/ProfileCard.component';
+import { ProfileCardAuth0 } from '../../components/ProfileCardAuth0/ProfileCardAuth0.component';
+import { VideosGrid } from '../../components/VideosGrid/VideosGrid.component';
+import { Container, LeftContainer, LogoutContainer, RightContainer, Title, GlobalStyle } from './FavoriteVideos.styles';
 
-export const FavoriteVideos = ({testData}) => {
+const FavoriteVideos = ({testData}) => {
 
     const { isAuthenticated, logout } = useAuth0();
     const { state, dispatch } = useGlobal();
+    const { pathname } = useLocation();
+    
     const data = state.favorites || testData;
 
     function deAuthenticate(event) {
@@ -25,16 +27,7 @@ export const FavoriteVideos = ({testData}) => {
         </LeftContainer>
         <RightContainer>
             <Title theme={state.theme}>Favorite videos</Title>
-            <VideosContainer>
-                {
-                    data.map(video =>
-                        <Link key={video.etag} to={`/favorites/${video.id}`}>
-                        <VideoGridItem key={video.etag}
-                        video={video} renderedFromFavorites={true}/>
-                        </Link>
-                    )
-                }
-            </VideosContainer>
+            <VideosGrid data={data} location={pathname}/>  
         </RightContainer>
         <LogoutContainer>
             <Link to="/" onClick={deAuthenticate}>
@@ -45,3 +38,5 @@ export const FavoriteVideos = ({testData}) => {
         </LogoutContainer>
   </Container>;
 }
+
+export default FavoriteVideos;

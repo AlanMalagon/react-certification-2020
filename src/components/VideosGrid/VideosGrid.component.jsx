@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router';
 import styled from 'styled-components';
 import { VideoGridItem } from './VideoGridItem/VideoGridItem.component';
 
@@ -9,13 +10,14 @@ const Container = styled.div`
     justify-content: center;
 `;
 
-export const VideosGrid = ({data}) => {
+export const VideosGrid = ({data, location}) => {
 
   return <Container data-testid="videosGrid">
       {
-          data.items.map(video =>
-              <VideoGridItem key={video.etag}
-              video={video}/>
+          data.map(video =>
+              <VideoGridItem key={video.id}
+              video={video}
+              location={location}/>
           )
       }
   </Container>;

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { VideosGrid } from '../../components/VideosGrid/VideosGrid.component';
 import { useFetchVideos } from '../../utils/hooks/useFetchVideos';
 import './Home.styles.css';
@@ -9,16 +9,15 @@ const IconsInfoContainer = styled.div`
   color: ${props => props.theme.iconsInfoContainer.color};
 `;
 
-function HomePage({setSelectedVideo}) {
+function HomePage() {
 
   const { state } = useGlobal();
-  const {videos: data, loading} = useFetchVideos(state.search);
-  const sectionRef = useRef(null);
+  const { videos, loading } = useFetchVideos(state.search);
 
   return (
-    <section className="homepage" ref={sectionRef}>
+    <section className="homepage" >
       {loading && <p>Loading</p>}
-      {!loading && <VideosGrid data={data} setSelectedVideo={setSelectedVideo}/>}  
+      {!loading && <VideosGrid data={videos} location='/video'/>}  
       
     <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></IconsInfoContainer>
     <IconsInfoContainer theme={state.theme}>Icons made by <a href="https://icon54.com/" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a></IconsInfoContainer>

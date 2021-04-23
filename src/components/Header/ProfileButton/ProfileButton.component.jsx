@@ -43,9 +43,12 @@ export const ProfileButton = () => {
     /**
      * This code is esentially the same as above but it will use the Auth0 image of the user
      */
-    return <Link to={redirectTo} onClick={()=> dispatch({type:'closeMenu'})}>
+    return <Link to={redirectTo} onClick={()=> {
+                dispatch({type:'closeMenu'});
+                if(!isAuthenticated)loginWithPopup();
+            }}>
         <Container data-testid="profileButton">
-            <StyledButton whileTap={buttonPressedStyle} onClick={() => !isAuthenticated?loginWithPopup():()=>{}}>
+            <StyledButton whileTap={buttonPressedStyle}>
                 {isAuthenticated?<Avatar src={user.picture}></Avatar>:<ProfileSVG/>}
             </StyledButton>
         </Container>
