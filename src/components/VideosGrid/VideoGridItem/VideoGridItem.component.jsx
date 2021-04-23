@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useAuth0 } from "@auth0/auth0-react";
 import { CardContainer, VideoThumbnail, AddToFavoritesButton, VideoInfo, VideoTitle, VideoThumbnailInfo } from './VideoGridItem.styles';
 import { parseDatetime } from '../../../utils/parseDatetime';
