@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
-import { parseDatetime } from '../../../utils/parseDatetime';
-import { Subcontainer, Title, ChannelAndDatePublished, Separator, DescriptionContainer, DescriptionText, ShowLessMore, AddToFavoritesContainer, AddToFavoritesButton } from './VideoInfo.styles';
-import { useGlobal } from '../../../providers/Global.provider';
-import { FavoriteSVG } from '../../../svg/Favorite';
 
+//hooks
+import { useAuth0 } from "@auth0/auth0-react";
+import { useGlobal } from '../../providers/Global.provider';
+
+//utils
+import { parseDatetime } from '../../utils/parseDatetime';
+
+//styles
+import { FavoriteSVG } from '../../svg/Favorite';
+import { Subcontainer, Title, ChannelAndDatePublished, Separator, DescriptionContainer, DescriptionText, ShowLessMore, AddToFavoritesContainer, AddToFavoritesButton } from './VideoInfo.styles';
 const variants = {
     open: {height: "auto"},
     closed: {height: 50}

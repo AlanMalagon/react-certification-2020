@@ -1,11 +1,17 @@
 import React from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
 import { Link, useLocation } from 'react-router-dom';
+
+//hooks
+import { useAuth0 } from "@auth0/auth0-react";
 import { useGlobal } from '../../providers/Global.provider';
+
+//components
 import { ProfileCard } from '../../components/ProfileCard/ProfileCard.component';
 import { ProfileCardAuth0 } from '../../components/ProfileCardAuth0/ProfileCardAuth0.component';
 import { VideosGrid } from '../../components/VideosGrid/VideosGrid.component';
-import { Container, LeftContainer, LogoutContainer, RightContainer, Title, GlobalStyle } from './FavoriteVideos.styles';
+
+//Styles
+import { Container, LeftContainer, LogoutContainer, RightContainer, Title } from './FavoriteVideos.styles';
 
 const FavoriteVideos = ({testData}) => {
 
@@ -21,7 +27,6 @@ const FavoriteVideos = ({testData}) => {
     }
 
     return <Container>
-        <GlobalStyle theme={state.theme}/>
         <LeftContainer>
             {isAuthenticated?<ProfileCardAuth0/>:<ProfileCard/>}
         </LeftContainer>

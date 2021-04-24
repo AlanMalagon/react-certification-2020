@@ -1,6 +1,6 @@
 import React from 'react';
 import { act, render, screen, fireEvent } from '@testing-library/react';
-import { VideoDetail } from './VideoDetail.component';
+import { VideoDetail } from './VideoDetail.page';
 import { BrowserRouter } from 'react-router-dom';
 import { } from '../../utils/hooks/useFetchVideoInfo'
 import GlobalProvider from '../../providers/Global.provider';

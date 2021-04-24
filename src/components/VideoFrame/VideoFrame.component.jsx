@@ -1,4 +1,6 @@
 import React from 'react';
+
+//styles
 import { Container, Frame } from './VideoFrame.styles';
 
 export const VideoFrame = ({videoId}) => {

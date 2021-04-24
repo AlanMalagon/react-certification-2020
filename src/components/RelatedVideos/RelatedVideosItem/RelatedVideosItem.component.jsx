@@ -1,7 +1,13 @@
 import React from 'react';
+
+//hooks
+import { useGlobal } from '../../../providers/Global.provider';
+
+//utils
+import { parseDatetime } from '../../../utils/parseDatetime';
+
+//styles
 import { VideoRelated, Thumbnail, Subcontainer, Title, ChannelAndDatePublished } from './RelatedVideosItem.styles';
-import { parseDatetime } from '../../../../utils/parseDatetime';
-import { useGlobal } from '../../../../providers/Global.provider';
 
 export const RelatedVideosItem = ({video}) => {
 

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
-import { createGlobalStyle } from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
@@ -48,10 +47,4 @@ export const Title = styled.h1`
     justify-content: center;
     margin: -10px 0 10px 0;
     width: 100%;
-`;
-
-export const GlobalStyle = createGlobalStyle`
-    body{
-        background-color: ${props => props.theme.body.backgroundColor};
-    }
 `;
