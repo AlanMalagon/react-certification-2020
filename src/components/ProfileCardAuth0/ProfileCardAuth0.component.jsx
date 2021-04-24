@@ -1,6 +1,10 @@
 import React from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
+
+//hooks
 import { useGlobal } from '../../providers/Global.provider';
+import { useAuth0 } from "@auth0/auth0-react";
+
+//components
 import { Container, ProfilePic, ProfileSeparator, Name } from '../ProfileCard/ProfileCard.styles';
 
 export const ProfileCardAuth0 = () => {

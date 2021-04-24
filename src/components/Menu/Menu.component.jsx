@@ -1,7 +1,13 @@
 import React from 'react';
+
+//hooks
+import { useGlobal } from '../../providers/Global.provider';
+
+//components
 import { MenuSVG } from '../../svg/Menu';
 import { MenuList } from './MenuList/MenuList.component';
-import { useGlobal } from '../../providers/Global.provider';
+
+//styles
 import { NavContainer, StyledButton } from './Menu.styles';
 
 

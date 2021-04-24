@@ -1,9 +1,13 @@
 import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+
+//hooks
 import { useAuth0 } from "@auth0/auth0-react";
+import { useGlobal } from '../../../providers/Global.provider';
+
+//styles
 import { CardContainer, VideoThumbnail, AddToFavoritesButton, VideoInfo, VideoTitle, VideoThumbnailInfo } from './VideoGridItem.styles';
 import { parseDatetime } from '../../../utils/parseDatetime';
-import { useGlobal } from '../../../providers/Global.provider';
 import { FavoriteSVG } from '../../../svg/Favorite';
 
 export const VideoGridItem = ({video, location}) => {

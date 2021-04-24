@@ -1,6 +1,12 @@
 import React from 'react';
-import { DarkmodeSVG } from '../../../svg/Darkmode';
+
+//hooks
 import { useGlobal } from '../../../providers/Global.provider';
+
+//components
+import { DarkmodeSVG } from '../../../svg/Darkmode';
+
+//styles
 import {Container, StyledButton, buttonPressedStyle} from '../HeaderIconStyles';
 
 export const DarkmodeButton = () => {

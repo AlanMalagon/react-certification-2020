@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useGlobal } from '../../../providers/Global.provider';
+
+//hooks
+import { useGlobal } from '../../../../providers/Global.provider';
+
+//styles
 import { ListItem, IconContainer, NameContainer, Name } from './MenuItem.styles';
 
 const variants = {

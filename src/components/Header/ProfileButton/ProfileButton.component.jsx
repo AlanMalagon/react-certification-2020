@@ -1,11 +1,16 @@
 import React from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
 import { Link, useLocation } from 'react-router-dom';
-import styled from 'styled-components';
-import { useGlobal } from '../../../providers/Global.provider';
-import { ProfileSVG } from '../../../svg/Profile';
-import {Container, StyledButton, buttonPressedStyle} from '../HeaderIconStyles';
 
+//hooks
+import { useAuth0 } from "@auth0/auth0-react";
+import { useGlobal } from '../../../providers/Global.provider';
+
+//components
+import { ProfileSVG } from '../../../svg/Profile';
+
+//styles
+import {Container, StyledButton, buttonPressedStyle} from '../HeaderIconStyles';
+import styled from 'styled-components';
 const Avatar = styled.img`
     border-radius: 50%;
     height: 36px;

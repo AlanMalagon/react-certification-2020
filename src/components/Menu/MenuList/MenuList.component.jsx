@@ -1,8 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { MenuItem } from '../MenuItem/MenuItem.component';
+
+//Components
+import { MenuItem } from './MenuItem/MenuItem.component';
 import { FavoriteSVG } from '../../../svg/Favorite';
 import { HomeSVG } from '../../../svg/Home';
+
+//styles
+import { motion } from 'framer-motion';
 
 const itemIds = [
     {

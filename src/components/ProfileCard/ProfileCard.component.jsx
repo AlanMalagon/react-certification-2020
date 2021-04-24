@@ -1,5 +1,9 @@
 import React from 'react';
+
+//hooks
 import { useGlobal } from '../../providers/Global.provider';
+
+//styles
 import { Container, ProfilePic, ProfileSeparator, Name } from './ProfileCard.styles';
 
 export const ProfileCard = () => {

@@ -1,8 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+
+//components
 import { VideoGridItem } from './VideoGridItem/VideoGridItem.component';
 
-
+//styles
+import styled from 'styled-components';
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {Switch, Route, useLocation } from 'react-router-dom';
 
 //Pages
@@ -7,10 +6,10 @@ import HomePage from '../../pages/Home';
 import NotFound from '../../pages/NotFound';
 import Private from '../Private';
 import FavoriteVideos from '../../pages/FavoriteVideos/FavoriteVideos.page';
+import FavoriteVideoDetail from '../../pages/FavoriteVideoDetail/FavoriteVideoDetail.page';
 
 //Components
-import { VideoDetail } from '../../components/VideoDetail/VideoDetail.component';
-import { FavoriteVideoDetail } from '../FavoriteVideoDetail/FavoriteVideoDetail.component';
+import { VideoDetail } from '../../pages/VideoDetail/VideoDetail.page';
 import { Login } from '../Login/Login.component';
 
 export const Routes = () =>{

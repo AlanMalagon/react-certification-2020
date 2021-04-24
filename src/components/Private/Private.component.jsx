@@ -1,6 +1,8 @@
 import React from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
 import { Route, Redirect } from 'react-router-dom';
+
+//hooks
+import { useAuth0 } from "@auth0/auth0-react";
 import { useGlobal } from '../../providers/Global.provider';
 
 function Private({ children, ...rest }) {

@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Container, InnerContainer, StyledSearchbar, StyledSvg } from './Searchbar.styles';
+
+//hooks
 import { useGlobal } from '../../../providers/Global.provider';
+
+//components
+import { Container, InnerContainer, StyledSearchbar, StyledSvg } from './Searchbar.styles';
 
 export const Searchbar = () => {
 
   const { state, dispatch } = useGlobal();
-
   const history = useHistory();
-
   const [inputValue, setInputValue] = useState("");
 
   const handleSubmit = (e) =>{

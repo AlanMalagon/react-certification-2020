@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 
+//hooks
 import { useGlobal } from '../../providers/Global.provider';
-import { Container, LoginCard, CardTitle, CloseButton, Form, FormInput, Label, InfoContainer, Button } from './Login.styles.js';
+import loginApi from '../../providers/login.api';
+
+//components
 import { ProfileSVG } from '../../svg/Profile';
 import { PasswordSVG } from '../../svg/Password';
-import loginApi from '../../providers/login.api';
+
+//styles
+import { Container, LoginCard, CardTitle, CloseButton, Form, FormInput, Label, InfoContainer, Button } from './Login.styles.js';
 
 export const Login = () =>{
   const history = useHistory();

@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
+//hooks
+import GlobalProvider from '../../providers/Global.provider';
 
-//Components
+//components
 import Layout from '../Layout';
 import { Header } from '../../components/Header/Header.component';
-import GlobalProvider from '../../providers/Global.provider';
 import { Menu } from '../Menu/Menu.component';
 import { Routes } from '../Routes/Routes.component';
 
