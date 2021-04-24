@@ -1,29 +1,29 @@
 import { useState, useEffect } from 'react';
 import { useGapi } from '../../utils/hooks/useGapi';
-const mockData = require('../../mock-data/youtube-video-api-id.json').items[0];
+// const mockData = require('../../mock-data/youtube-video-api-id.json').items[0];
 
 const getRelatedVideos = async(gapi, videoId) =>{
-    // if(gapi !== null){
-    //     const { body } = await gapi.client.youtube.videos.list({
-    //         "part":[
-    //             "snippet"
-    //         ],
-    //         "type":"video",
-    //         "id":videoId,
-    //     });
-    //     return { 
-    //         videoInfo: JSON.parse(body).items[0],
-    //         loading: false
-    //     }
-    // }
-    // return { 
-    //     videoInfo: null,
-    //     loading: true
-    // };
+    if(gapi !== null){
+        const { body } = await gapi.client.youtube.videos.list({
+            "part":[
+                "snippet"
+            ],
+            "type":"video",
+            "id":videoId,
+        });
+        return { 
+            videoInfo: JSON.parse(body).items[0],
+            loading: false
+        }
+    }
     return { 
-        videoInfo: mockData,
-        loading: false
+        videoInfo: null,
+        loading: true
     };
+    // return { 
+    //     videoInfo: mockData,
+    //     loading: false
+    // };
 }
 
 export const useFetchVideoInfo = (videoId) =>{

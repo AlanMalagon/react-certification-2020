@@ -1,6 +1,5 @@
 export const extractVideos = (data) => {
     return data.items.map(item=>{
-        console.log(data);
         if(item.id.hasOwnProperty('videoId')){
             item.id = item.id.videoId;
         }
