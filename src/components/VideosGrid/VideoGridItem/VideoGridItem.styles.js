@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export const CardContainer = styled(motion.div)`
     cursor: pointer;
@@ -13,7 +13,10 @@ export const CardContainer = styled(motion.div)`
     text-align: left;
 
     @media(max-width:320px){
-        padding: 10px;
+        max-width: 300px;
+        min-width: 300px;
+        max-height: 220px;
+        min-height: 220px;
     }
 
     @media(max-width:280px){
@@ -25,9 +28,11 @@ export const CardContainer = styled(motion.div)`
     }
 `;
 
-export const VideoThumbnail = styled.img`
+export const VideoThumbnail = styled(motion.img)`
+    width: 320px;
     max-height: 180px;
     object-fit: cover;
+    user-select: none;
 
     @media(max-width:320px){
         max-height: 165px;
@@ -57,14 +62,12 @@ export const VideoThumbnailInfo = styled.p`
     margin: 10px 0 0 0px;
 `;
 
-export const AddToFavoritesButton = styled(motion.div)`
+export const FavButtonContainer = styled.div`
     height: 42px;
-    margin: -260px 0 0 270px;
+    margin: -15rem 0 0 15rem;
     width: 42px;
-    svg{
-        cursor: pointer;
-        fill: ${props => props.theme.videoDetail.svgColor};
-        float: right;
-        z-index: 1;
+
+    @media(min-width:280px) and (max-width: 320px){        
+        margin: -14.2rem 0 0 15rem;
     }
 `;

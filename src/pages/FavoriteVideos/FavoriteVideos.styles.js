@@ -22,9 +22,12 @@ export const LeftContainer = styled.div`
 
 
 export const LogoutContainer = styled(motion.div)`
+    margin: 20px;
+
     button{
         background-color: #444;
         color: white;
+        cursor: pointer;
         border: none;
         border-radius: 5px;
         height: 32px;

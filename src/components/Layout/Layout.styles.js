@@ -17,6 +17,6 @@ export const Container = styled.main`
 export const GlobalStyle = createGlobalStyle`
     body{
         background-color: ${props => props.theme.body.backgroundColor};
-        color: ${props => props.theme.body.color}
+        color: ${props => props.theme.body.color};
     }
 `;

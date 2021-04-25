@@ -17,14 +17,13 @@ export const reducer = (state, action) => {
         case 'logout':
             storage.remove('user');
             return {...state, user: {authenticated:false}}
-        case 'addFavorite':
-            const newFavs = [...favorites, action.value];
+        case 'addRemoveFavorite':
+            let newFavs = [];
+            let flag = favorites.filter(item=>item.id === action.value.id).length > 0;
+            if(flag) newFavs = favorites.filter(item=>item.id !== action.value.id);
+            else newFavs = [...favorites, action.value];
             storage.set('favorites', newFavs);
             return {...state, favorites:newFavs}
-        case 'removeFavorite':
-            let rmFavs = favorites.filter(item=>item.id !== action.value.id);
-            storage.set('favorites', rmFavs);
-            return {...state, favorites:rmFavs}
         case 'menu':
             return {...state, isMenuOpen:!isMenuOpen}
         case 'openMenu':

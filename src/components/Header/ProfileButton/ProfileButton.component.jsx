@@ -18,8 +18,7 @@ const Avatar = styled.img`
 `;
 
 export const ProfileButton = () => {
-    const { user, isAuthenticated } = useAuth0();
-    const { loginWithPopup } = useAuth0();
+    const { user, isAuthenticated, loginWithPopup } = useAuth0();
     const location = useLocation();
     const {state, dispatch } = useGlobal();
 

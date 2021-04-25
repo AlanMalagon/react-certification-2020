@@ -2,40 +2,27 @@ import styled from 'styled-components';
 import {motion} from 'framer-motion';
 
 export const Subcontainer = styled.div`
-    display: grid;
+    display: flex;
+`;
+
+export const TitleAndDateContainer = styled.div`
+    width: 100%;
 `;
 
 export const Title = styled.div`
     color: ${props => props.theme.videoDetail.color};
     font-size: 32px;
-    grid-column: 1/2;
-    grid-row: 1;
     margin: 10px 0px 0px 0px;
 `;
 
 export const ChannelAndDatePublished = styled.div`
     color: ${props => props.theme.videoDetail.colorDate};
     font-size: 12px;
-    grid-column: 1/2;
-    grid-row: 2;
     margin: 0px 0px 0px 0px;
 `;
 
-export const AddToFavoritesContainer = styled.div`
-    grid-column: 2/2;
-    grid-row: 2;
-`;
-
-export const AddToFavoritesButton = styled(motion.div)`
-    float: right;
-    height: 42px;
-    margin: -35px 5px 0 0; 
-    width: 42px;
-    svg{
-        cursor: pointer;
-        fill: ${props => props.theme.videoDetail.svgColor};
-        float: right;
-    }
+export const FavButtonContainer = styled.div`
+    margin: 1.3rem 0 0 0px;
 `;
 
 export const Separator = styled.div`
