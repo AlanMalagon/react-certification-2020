@@ -17,7 +17,7 @@ function HomePage() {
   const { videos, loading, pageTokens } = useFetchVideos(state.search, state.page);
 
   return (
-    <Container>
+    <Container data-testid="home-page">
       {loading && <p>Loading</p>}
       {!loading && <VideosGrid data={videos} location='/video'/>}
       <PageSelector pageTokens={pageTokens}/>

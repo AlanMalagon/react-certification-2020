@@ -11,7 +11,6 @@ export const PageSelector = ({pageTokens}) =>{
     const [ disablePrevButton, setDisablePrevButton ] = useState(true);
 
     useEffect(()=>{
-        console.log(pageToken);
         dispatch({type: 'changePage', value:pageToken});
         pageTokens.prevPageToken !== '' ? setDisablePrevButton(false):setDisablePrevButton(true);
     },[pageToken, dispatch, pageTokens]);
