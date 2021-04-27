@@ -53,6 +53,11 @@ export const dark = {
         backgroundColor: '#1b2429',
         boxShadow: 'none',
         separatorColor: '#919191'
+    },
+    pageButtons:{
+        backgroundColor: '#444',
+        color:'#fff',
+        hoverColor: '#888'
     }
 };
 
@@ -111,4 +116,9 @@ export const light = {
         boxShadow: '0px 0px 8px -2px rgba(0,0,0,0.5)',
         separatorColor: '#e4e4e4'
     },
+    pageButtons:{
+        backgroundColor: '#888',
+        color:'#fff',
+        hoverColor: '#aaa'
+    }
 }

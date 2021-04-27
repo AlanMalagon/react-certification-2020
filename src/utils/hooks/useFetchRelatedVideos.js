@@ -11,6 +11,7 @@ const getRelatedVideos = async(gapi, videoId) =>{
             ],
             "type":"video",
             "relatedToVideoId":videoId,
+            "maxResults":10
         });
         return { 
             relatedVideos: extractVideos(JSON.parse(body)),

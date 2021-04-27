@@ -19,7 +19,7 @@ function useGlobal() {
 
 function GlobalProvider({children}) {
 
-  const [state, dispatch] = useReducer(reducer, {theme, search:'doggos', user, favorites, isMenuOpen:false});
+  const [state, dispatch] = useReducer(reducer, {theme, search:'doggos', page:'', user, favorites, isMenuOpen:false});
 
   return (
     <GlobalContext.Provider value={{state, dispatch}}>

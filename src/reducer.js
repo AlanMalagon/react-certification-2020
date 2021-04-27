@@ -30,6 +30,8 @@ export const reducer = (state, action) => {
             return {...state, isMenuOpen:true}
         case 'closeMenu':
             return {...state, isMenuOpen:false}
+        case 'changePage':
+            return {...state, page:action.value}
         default:
             return new Error(`Unhandled action ${action.type} in reducer was found`);
     }

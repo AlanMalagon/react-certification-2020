@@ -16,8 +16,6 @@ export const VideoGridItem = ({video, location}) => {
     const { state, dispatch } = useGlobal();
     const [showFavButton, setShowFavButton] = useState(false);
 
-    console.log(state.user.authenticated, isAuthenticated);
-
     const handleMouseEnter = (e) => {
         setShowFavButton(true);
     };
