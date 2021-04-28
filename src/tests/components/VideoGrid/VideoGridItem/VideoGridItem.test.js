@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { VideoGridItem } from './VideoGridItem.component';
-import { parseDatetime } from '../../../utils/parseDatetime';
-import GlobalProvider from '../../../providers/Global.provider';
+import { VideoGridItem } from '../../../../components/VideosGrid/VideoGridItem/VideoGridItem.component';
+import { parseDatetime } from '../../../../utils/parseDatetime';
+import GlobalProvider from '../../../../providers/Global.provider';
 import { BrowserRouter } from 'react-router-dom';
 
 const mockData = {

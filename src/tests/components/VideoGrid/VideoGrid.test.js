@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { VideosGrid } from './VideosGrid.component';
+import { VideosGrid } from '../../../components/VideosGrid/VideosGrid.component';
 import { BrowserRouter } from 'react-router-dom';
-import GlobalProvider from '../../providers/Global.provider';
-import { extractVideos } from '../../utils/extractVideos';
+import GlobalProvider from '../../../providers/Global.provider';
+import { extractVideos } from '../../../utils/extractVideos';
 
-const data = extractVideos(require('../../mock-data/youtube-video-api.json'));
+const data = extractVideos(require('../../../mock-data/youtube-video-api.json'));
 
 describe('VideoGrid', ()=>{
     it('should render the component and its children correctly', ()=>{

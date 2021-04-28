@@ -45,20 +45,20 @@ export const Login = () =>{
   };
   
   return (
-    <Container>
+    <Container data-testid="login">
       <LoginCard theme={state.theme}>
         <div>
           <CloseButton onClick={goBack}>&times;</CloseButton>
           <CardTitle><h1>Welcome back!</h1></CardTitle>
         </div>
-        <Form onSubmit={authenticate} className="login-form">
+        <Form onSubmit={authenticate}>
           <Label theme={state.theme}>
             <ProfileSVG/>
-            <FormInput theme={state.theme} value={username} onChange={handleUsrChange} required type="text" data-testid="username" placeholder="Username"/>
+            <FormInput theme={state.theme} value={username} onChange={handleUsrChange} required type="text" placeholder="Username"/>
           </Label>
           <Label theme={state.theme}>
             <PasswordSVG/>
-            <FormInput theme={state.theme} value={password} onChange={handlePassChange} required type="password" data-testid="password" placeholder="Password"/>
+            <FormInput theme={state.theme} value={password} onChange={handlePassChange} required type="password" placeholder="Password"/>
           </Label>
           {
             loginProcess.error &&

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Layout from './Layout.component';
-import GlobalProvider from '../../providers/Global.provider';
+import Layout from '../../../components/Layout/Layout.component';
+import GlobalProvider from '../../../providers/Global.provider';
 
 describe('Layout component', ()=>{
     it('should render correctly',()=>{

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { Searchbar } from './Searchbar.component';
-import GlobalProvider from '../../../providers/Global.provider';
+import { Searchbar } from '../../../../components/Header/Searchbar/Searchbar.component';
+import GlobalProvider from '../../../../providers/Global.provider';
 
 const mockHistoryPush = jest.fn();
 

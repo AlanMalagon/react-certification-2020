@@ -7,12 +7,12 @@ export const reducer = (state, action) => {
     switch(action.type){
         case 'theme':
             theme.name === 'dark' ? theme = light : theme = dark;
-            storage.set('theme', JSON.stringify(theme));
+            storage.set('theme', theme);
             return {...state, theme };
         case 'search':
             return {...state, search: action.value}
         case 'login':
-            storage.set('user', JSON.stringify(action.value));
+            storage.set('user', action.value);
             return {...state, user: action.value}
         case 'logout':
             storage.remove('user');

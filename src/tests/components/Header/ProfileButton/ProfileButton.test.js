@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, act,screen } from '@testing-library/react';
-import { Header } from '../Header.component'
-import { Routes } from '../../Routes/Routes.component';
+import { Header } from '../../../../components/Header/Header.component'
+import { Routes } from '../../../../components/Routes/Routes.component';
 import { MemoryRouter } from 'react-router';
-import GlobalProvider from '../../../providers/Global.provider';
+import GlobalProvider from '../../../../providers/Global.provider';
 
 describe('ProfileButton component', ()=>{
 

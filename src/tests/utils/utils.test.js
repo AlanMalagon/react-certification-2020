@@ -1,5 +1,5 @@
-import { random } from './fns';
-import { storage } from './storage';
+import { random } from '../../utils/fns';
+import { storage } from '../../utils/storage';
 
 describe('Functions in "/utils" directory', () => {
 

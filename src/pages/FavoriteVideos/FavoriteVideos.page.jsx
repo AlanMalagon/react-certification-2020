@@ -26,7 +26,7 @@ const FavoriteVideos = ({testData}) => {
         dispatch({type:'logout'});
     }
 
-    return <Container>
+    return <Container data-testid='favorites-page'>
         <LeftContainer>
             {isAuthenticated?<ProfileCardAuth0/>:<ProfileCard/>}
         </LeftContainer>

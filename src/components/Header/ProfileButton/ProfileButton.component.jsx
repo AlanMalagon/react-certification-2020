@@ -47,7 +47,7 @@ export const ProfileButton = () => {
     /**
      * This code is esentially the same as above but it will use the Auth0 image of the user
      */
-    return <Link to={redirectTo} onClick={()=> {
+    return <Link to={redirectTo} data-testid="openLoginModal" onClick={()=> {
                 dispatch({type:'closeMenu'});
                 if(!isAuthenticated)loginWithPopup();
             }}>

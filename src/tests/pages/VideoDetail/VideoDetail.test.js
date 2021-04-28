@@ -1,17 +1,16 @@
 import React from 'react';
 import { act, render, screen, fireEvent } from '@testing-library/react';
-import { VideoDetail } from './VideoDetail.page';
+import { VideoDetail } from '../../../pages/VideoDetail/VideoDetail.page';
 import { BrowserRouter } from 'react-router-dom';
-import GlobalProvider from '../../providers/Global.provider';
-
-const mockVideoInfo =  require('../../mock-data/youtube-video-api-id.json').items[0];
+import GlobalProvider from '../../../providers/Global.provider';
+const mockVideoInfo =  require('../../../mock-data/youtube-video-api-id.json').items[0];
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),
     useParams: ()=>({videoId:'40RVG_ij-cY'}),
 }));
 
-jest.mock('../../utils/hooks/useFetchVideoInfo', () => ({
+jest.mock('../../../utils/hooks/useFetchVideoInfo', () => ({
     useFetchVideoInfo: ()=>({videoInfo:mockVideoInfo}),
 }));
 

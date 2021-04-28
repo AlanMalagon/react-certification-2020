@@ -36,7 +36,7 @@ const variants = {
 export const Menu = () => {
   const { state, dispatch } = useGlobal();
   const { theme, isMenuOpen } = state;
-  return <NavContainer animate={isMenuOpen ? "open" : "closed"} variants={variants} theme={theme} custom={theme.header.menu}>
+  return <NavContainer animate={isMenuOpen ? "open" : "closed"} variants={variants} theme={theme} custom={theme.header.menu} data-testid="menu">
     <StyledButton onClick={() => dispatch({type:'menu'})}>
       <MenuSVG/>
       </StyledButton>

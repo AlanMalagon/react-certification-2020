@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { DarkmodeButton } from './DarkmodeButton.component';
-import GlobalProvider from '../../../providers/Global.provider';
+import { DarkmodeButton } from '../../../../components/Header/DarkmodeButton/DarkmodeButton.component';
+import GlobalProvider from '../../../../providers/Global.provider';
 
 describe('DarkmodeButton component', ()=>{    
     
