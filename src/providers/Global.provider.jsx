@@ -3,8 +3,8 @@ import { reducer } from '../reducer';
 import { storage } from '../utils/storage';
 import { dark } from '../Themes.styles';
 
-const theme = JSON.parse(storage.get('theme')) || dark;
-const user = JSON.parse(storage.get('user')) || {authenticated:false};
+const theme = storage.get('theme') || dark;
+const user = storage.get('user') || {authenticated:false};
 const favorites = storage.get('favorites') || [];
 
 const GlobalContext = React.createContext(null);

@@ -1,5 +1,6 @@
 :root {
-  --color: #b400d2;
+  /* --color: #b400d2; */
+  --color: #000;
 }
 
 html {
@@ -38,7 +39,4 @@ a {
 
 a:active {
   color: blueviolet;
-}
-
-hr {
 }

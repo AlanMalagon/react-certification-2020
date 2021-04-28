@@ -2,7 +2,7 @@ import React from 'react';
 import { act, screen, render } from '@testing-library/react';
 import { Routes } from '../../../components/Routes/Routes.component';
 import { MemoryRouter } from 'react-router';
-import GlobalProvider, { useGlobal } from '../../../providers/Global.provider';
+import GlobalProvider from '../../../providers/Global.provider';
 
 describe('Routes component', ()=>{
 

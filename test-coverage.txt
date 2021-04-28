@@ -1,7 +1,7 @@
 ------------------------------------------------|----------|----------|----------|----------|-------------------|
 File                                            |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 ------------------------------------------------|----------|----------|----------|----------|-------------------|
-All files                                       |    90.18 |    74.74 |    82.84 |    91.69 |                   |
+All files                                       |    89.14 |    78.38 |       80 |    90.33 |                   |
  src                                            |      100 |      100 |      100 |      100 |                   |
   Themes.styles.js                              |      100 |      100 |      100 |      100 |                   |
   reducer.js                                    |      100 |      100 |      100 |      100 |                   |
@@ -17,8 +17,8 @@ All files                                       |    90.18 |    74.74 |    82.84
   HeaderIconStyles.js                           |      100 |      100 |      100 |      100 |                   |
  src/components/Header/DarkmodeButton           |       60 |      100 |    33.33 |       75 |                   |
   DarkmodeButton.component.jsx                  |       60 |      100 |    33.33 |       75 |                17 |
- src/components/Header/ProfileButton            |    66.67 |       50 |       50 |    72.73 |                   |
-  ProfileButton.component.jsx                   |    66.67 |       50 |       50 |    72.73 |          30,51,52 |
+ src/components/Header/ProfileButton            |       50 |    81.82 |    14.29 |       50 |                   |
+  ProfileButton.component.jsx                   |       50 |    81.82 |    14.29 |       50 |... 57,68,69,82,83 |
  src/components/Header/Searchbar                |      100 |      100 |      100 |      100 |                   |
   Searchbar.component.jsx                       |      100 |      100 |      100 |      100 |                   |
   Searchbar.styles.js                           |      100 |      100 |      100 |      100 |                   |
@@ -104,4 +104,4 @@ All files                                       |    90.18 |    74.74 |    82.84
 Test Suites: 17 passed, 17 total
 Tests:       40 passed, 40 total
 Snapshots:   0 total
-Time:        5.999s
+Time:        8s

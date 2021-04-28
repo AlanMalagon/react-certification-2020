@@ -9,7 +9,10 @@ import { useGlobal } from '../../../providers/Global.provider';
 import { ProfileSVG } from '../../../svg/Profile';
 
 //styles
-import {Container, StyledButton, buttonPressedStyle} from '../HeaderIconStyles';
+import {Container, buttonPressedStyle} from '../HeaderIconStyles';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import styled from 'styled-components';
 const Avatar = styled.img`
     border-radius: 50%;
@@ -18,43 +21,69 @@ const Avatar = styled.img`
 `;
 
 export const ProfileButton = () => {
-    const { user, isAuthenticated, loginWithPopup } = useAuth0();
+    const { user, isAuthenticated, loginWithPopup, logout } = useAuth0();
     const location = useLocation();
     const {state, dispatch } = useGlobal();
 
-    let redirectTo = {
-        pathname:"/login",
-        state:{ background: location }
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
     };
-    if(isAuthenticated || state.user.authenticated){
-        redirectTo="/favorites"
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    function deAuthenticate(event) {
+        event.preventDefault();
+        dispatch({type:'logout'});
     }
-    
-    /**
-     * Code to interact with my own login implementation
-     * it will change the icon for the wizeline image used in the 
-     * login.api.js fake api.
-     */
-    // return <Link to={redirectTo} onClick={()=> dispatch({type:'closeMenu'})}>
-    //     <Container data-testid="profileButton">
-    //         <StyledButton whileTap={buttonPressedStyle}>            
-    //             {state.user.authenticated?<Avatar src={state.user.avatarUrl}></Avatar>:<ProfileSVG/>}
-    //         </StyledButton>
-    //     </Container>
-    // </Link>;
 
-
-    /**
-     * This code is esentially the same as above but it will use the Auth0 image of the user
-     */
-    return <Link to={redirectTo} data-testid="openLoginModal" onClick={()=> {
-                dispatch({type:'closeMenu'});
-                if(!isAuthenticated)loginWithPopup();
-            }}>
-        <Container data-testid="profileButton">
-            <StyledButton whileTap={buttonPressedStyle}>
-                {isAuthenticated?<Avatar src={user.picture}></Avatar>:<ProfileSVG/>}
-            </StyledButton>
-        </Container>
-    </Link>
+    return <>
+        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+            <Container whileTap={buttonPressedStyle} data-testid="profileButton" profile='profile'>
+                {isAuthenticated && <Avatar src={user.picture}/>}
+                {state.user.authenticated && <Avatar src={state.user.avatarUrl}/>}
+                {!(isAuthenticated || state.user.authenticated) && <ProfileSVG/>}
+            </Container>
+        </Button>
+        <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            onClick={()=>dispatch({type:'closeMenu'})}
+        >
+            {
+                !(isAuthenticated || state.user.authenticated) && 
+                <Link to={{pathname:"/login",state:{ background: location }}}>
+                    <MenuItem onClick={handleClose}>Login</MenuItem>
+                </Link>
+            }
+            {
+                !(isAuthenticated || state.user.authenticated) && 
+                <MenuItem onClick={()=>{
+                    handleClose();
+                    loginWithPopup();
+                }}>Auth0</MenuItem>
+            }
+            {
+                (isAuthenticated || state.user.authenticated) &&
+                <Link to='/favorites'>
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                </Link>
+            }
+            {
+                (isAuthenticated || state.user.authenticated) &&
+                <Link to="/" onClick={deAuthenticate}>
+                    <MenuItem onClick={() => {
+                        handleClose();
+                        logout({ returnTo: window.location.origin });
+                    }}>Logout</MenuItem>
+                </Link>
+            }
+        </Menu>
+    </>
 }
