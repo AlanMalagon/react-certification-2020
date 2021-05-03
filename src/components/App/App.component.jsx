@@ -1,47 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+//hooks
+import GlobalProvider from '../../providers/Global.provider';
 
-import AuthProvider from '../../providers/Auth';
-import HomePage from '../../pages/Home';
-import LoginPage from '../../pages/Login';
-import NotFound from '../../pages/NotFound';
-import SecretPage from '../../pages/Secret';
-import Private from '../Private';
+//components
 import Layout from '../Layout';
-
-//Components
 import { Header } from '../../components/Header/Header.component';
-import { VideoDetail } from '../../components/VideoDetail/VideoDetail.component';
+import { Menu } from '../Menu/Menu.component';
+import { Routes } from '../Routes/Routes.component';
 
 function App() {
 
-  const [searchValue, setSearchValue] = useState('doggos');
-
-  return (  
+  return (
     <BrowserRouter>
-      <Header setSearchValue={setSearchValue}/>
-      <AuthProvider>
+      <GlobalProvider>
+        <Menu/>
+        <Header/>
         <Layout>
-          <Switch>
-            <Route exact path="/">
-              <HomePage searchValue={searchValue}/>
-            </Route>
-            <Route exact path="/video/:videoId">
-              <VideoDetail/>
-            </Route>
-            <Route exact path="/login">
-              <LoginPage />
-            </Route>
-            <Private exact path="/secret">
-              <SecretPage />
-            </Private>
-            <Route path="*">
-              <NotFound />
-            </Route>
-          </Switch>
+          <Routes/>
         </Layout>
-      </AuthProvider>
+      </GlobalProvider>
     </BrowserRouter>
   );
 }

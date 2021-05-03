@@ -1,43 +1,107 @@
- PASS  src/components/Header/DarkmodeButton/DarkmodeButton.test.js
- PASS  src/components/Header/ProfileButton/ProfileButton.test.js
- PASS  src/components/Header/MenuButton/MenuButton.test.js
- PASS  src/components/Header/Searchbar/Searchbar.test.js
- PASS  src/components/VideosGrid/VideoGridItem/VideoGridItem.test.js
- PASS  src/components/Header/Header.test.js
- PASS  src/components/VideosGrid/VideoGrid.test.js
- PASS  src/components/Layout/Layout.test.js
- PASS  src/components/App/App.test.js
--------------------------------------|----------|----------|----------|----------|-------------------|
-File                                 |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
--------------------------------------|----------|----------|----------|----------|-------------------|
-All files                            |    93.18 |       50 |    92.31 |    93.18 |                   |
- components/App                      |      100 |      100 |      100 |      100 |                   |
-  App.component.jsx                  |      100 |      100 |      100 |      100 |                   |
- components/Header                   |      100 |      100 |      100 |      100 |                   |
-  Header.component.jsx               |      100 |      100 |      100 |      100 |                   |
-  HeaderIconStyles.js                |      100 |      100 |      100 |      100 |                   |
- components/Header/DarkmodeButton    |      100 |      100 |      100 |      100 |                   |
-  DarkmodeButton.component.jsx       |      100 |      100 |      100 |      100 |                   |
- components/Header/MenuButton        |      100 |      100 |      100 |      100 |                   |
-  MenuButton.component.jsx           |      100 |      100 |      100 |      100 |                   |
- components/Header/ProfileButton     |      100 |      100 |      100 |      100 |                   |
-  ProfileButton.component.jsx        |      100 |      100 |      100 |      100 |                   |
- components/Header/Searchbar         |      100 |      100 |      100 |      100 |                   |
-  Searchbar.component.jsx            |      100 |      100 |      100 |      100 |                   |
- components/Layout                   |      100 |      100 |      100 |      100 |                   |
-  Layout.component.jsx               |      100 |      100 |      100 |      100 |                   |
- components/VideosGrid               |      100 |      100 |      100 |      100 |                   |
-  VideosGrid.component.jsx           |      100 |      100 |      100 |      100 |                   |
- components/VideosGrid/VideoGridItem |      100 |      100 |      100 |      100 |                   |
-  VideoGridItem.component.jsx        |      100 |      100 |      100 |      100 |                   |
- pages/Home                          |     62.5 |       50 |       50 |     62.5 |                   |
-  Home.page.jsx                      |     62.5 |       50 |       50 |     62.5 |          17,18,19 |
--------------------------------------|----------|----------|----------|----------|-------------------|
+------------------------------------------------|----------|----------|----------|----------|-------------------|
+File                                            |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+------------------------------------------------|----------|----------|----------|----------|-------------------|
+All files                                       |    89.14 |    78.38 |       80 |    90.33 |                   |
+ src                                            |      100 |      100 |      100 |      100 |                   |
+  Themes.styles.js                              |      100 |      100 |      100 |      100 |                   |
+  reducer.js                                    |      100 |      100 |      100 |      100 |                   |
+ src/components/App                             |        0 |      100 |        0 |        0 |                   |
+  App.component.jsx                             |        0 |      100 |        0 |        0 |                15 |
+  index.js                                      |        0 |        0 |        0 |        0 |                   |
+ src/components/FavoriteButton                  |    81.82 |      100 |       60 |      100 |                   |
+  FavoriteButton.component.jsx                  |    77.78 |      100 |       50 |      100 |                   |
+  FavoriteButton.styles.js                      |      100 |      100 |      100 |      100 |                   |
+ src/components/Header                          |      100 |      100 |      100 |      100 |                   |
+  Header.component.jsx                          |      100 |      100 |      100 |      100 |                   |
+  Header.styles.js                              |      100 |      100 |      100 |      100 |                   |
+  HeaderIconStyles.js                           |      100 |      100 |      100 |      100 |                   |
+ src/components/Header/DarkmodeButton           |       60 |      100 |    33.33 |       75 |                   |
+  DarkmodeButton.component.jsx                  |       60 |      100 |    33.33 |       75 |                17 |
+ src/components/Header/ProfileButton            |       50 |    81.82 |    14.29 |       50 |                   |
+  ProfileButton.component.jsx                   |       50 |    81.82 |    14.29 |       50 |... 57,68,69,82,83 |
+ src/components/Header/Searchbar                |      100 |      100 |      100 |      100 |                   |
+  Searchbar.component.jsx                       |      100 |      100 |      100 |      100 |                   |
+  Searchbar.styles.js                           |      100 |      100 |      100 |      100 |                   |
+ src/components/Layout                          |      100 |      100 |      100 |      100 |                   |
+  Layout.component.jsx                          |      100 |      100 |      100 |      100 |                   |
+  Layout.styles.js                              |      100 |      100 |      100 |      100 |                   |
+  index.js                                      |        0 |        0 |        0 |        0 |                   |
+ src/components/Login                           |    83.33 |       75 |    76.92 |    83.33 |                   |
+  Login.component.jsx                           |    71.43 |       75 |    57.14 |    71.43 | 26,27,28,29,31,44 |
+  Login.styles.js                               |      100 |      100 |      100 |      100 |                   |
+ src/components/Menu                            |    81.82 |       50 |       60 |    81.82 |                   |
+  Menu.component.jsx                            |       75 |       50 |       50 |       75 |             15,40 |
+  Menu.styles.js                                |      100 |      100 |      100 |      100 |                   |
+ src/components/Menu/MenuList                   |      100 |      100 |      100 |      100 |                   |
+  MenuList.component.jsx                        |      100 |      100 |      100 |      100 |                   |
+ src/components/Menu/MenuList/MenuItem          |    90.91 |      100 |    66.67 |      100 |                   |
+  MenuItem.component.jsx                        |    83.33 |      100 |       50 |      100 |                   |
+  MenuItem.styles.js                            |      100 |      100 |      100 |      100 |                   |
+ src/components/PageSelector                    |       90 |       75 |       75 |    89.47 |                   |
+  PageSelector.component.jsx                    |    83.33 |       50 |       50 |    83.33 |             19,23 |
+  PageSelector.styles.js                        |      100 |      100 |      100 |      100 |                   |
+ src/components/ProfileCard                     |      100 |      100 |      100 |      100 |                   |
+  ProfileCard.component.jsx                     |      100 |      100 |      100 |      100 |                   |
+  ProfileCard.styles.js                         |      100 |      100 |      100 |      100 |                   |
+ src/components/ProfileCardAuth0                |       25 |      100 |        0 |       25 |                   |
+  ProfileCardAuth0.component.jsx                |       25 |      100 |        0 |       25 |          12,13,15 |
+ src/components/RelatedVideos                   |      100 |        0 |      100 |      100 |                   |
+  RelatedVideos.component.jsx                   |      100 |        0 |      100 |      100 |                21 |
+ src/components/RelatedVideos/RelatedVideosItem |    90.91 |      100 |       75 |      100 |                   |
+  RelatedVideosItem.component.jsx               |       75 |      100 |       50 |      100 |                   |
+  RelatedVideosItem.styles.js                   |      100 |      100 |      100 |      100 |                   |
+ src/components/Routes                          |      100 |    66.67 |      100 |      100 |                   |
+  Routes.component.jsx                          |      100 |    66.67 |      100 |      100 |             17,28 |
+ src/components/VideoFrame                      |      100 |      100 |      100 |      100 |                   |
+  VideoFrame.component.jsx                      |      100 |      100 |      100 |      100 |                   |
+  VideoFrame.styles.js                          |      100 |      100 |      100 |      100 |                   |
+ src/components/VideoInfo                       |      100 |    88.89 |      100 |      100 |                   |
+  VideoInfo.component.jsx                       |      100 |    88.89 |      100 |      100 |                43 |
+  VideoInfo.styles.js                           |      100 |      100 |      100 |      100 |                   |
+ src/components/VideosGrid                      |      100 |      100 |      100 |      100 |                   |
+  VideosGrid.component.jsx                      |      100 |      100 |      100 |      100 |                   |
+ src/components/VideosGrid/VideoGridItem        |    81.25 |       50 |       25 |    86.67 |                   |
+  VideoGridItem.component.jsx                   |       70 |       50 |       25 |    77.78 |             20,24 |
+  VideoGridItem.styles.js                       |      100 |      100 |      100 |      100 |                   |
+ src/pages/FavoriteVideoDetail                  |      100 |      100 |      100 |      100 |                   |
+  FavoriteVideoDetail.page.jsx                  |      100 |      100 |      100 |      100 |                   |
+ src/pages/FavoriteVideos                       |       80 |       50 |       50 |       80 |                   |
+  FavoriteVideos.page.jsx                       |    66.67 |       50 |    33.33 |    66.67 |          25,26,39 |
+  FavoriteVideos.styles.js                      |      100 |      100 |      100 |      100 |                   |
+ src/pages/Home                                 |      100 |      100 |      100 |      100 |                   |
+  Home.page.jsx                                 |      100 |      100 |      100 |      100 |                   |
+  Home.styles.js                                |      100 |      100 |      100 |      100 |                   |
+  index.js                                      |        0 |        0 |        0 |        0 |                   |
+ src/pages/NotFound                             |      100 |      100 |      100 |      100 |                   |
+  NotFound.page.jsx                             |      100 |      100 |      100 |      100 |                   |
+  NotFound.styles.js                            |      100 |      100 |      100 |      100 |                   |
+  index.js                                      |        0 |        0 |        0 |        0 |                   |
+ src/pages/VideoDetail                          |      100 |      100 |      100 |      100 |                   |
+  VideoDetail.page.jsx                          |      100 |      100 |      100 |      100 |                   |
+  VideoDetail.styles.js                         |      100 |      100 |      100 |      100 |                   |
+ src/providers                                  |       75 |    58.33 |       80 |       75 |                   |
+  Global.provider.jsx                           |       90 |     87.5 |      100 |       90 |                15 |
+  login.api.js                                  |       50 |        0 |    66.67 |       50 |          10,11,13 |
+ src/svg                                        |      100 |    83.33 |      100 |      100 |                   |
+  Darkmode.jsx                                  |      100 |      100 |      100 |      100 |                   |
+  Favorite.jsx                                  |      100 |    83.33 |      100 |      100 |                 4 |
+  Home.jsx                                      |      100 |      100 |      100 |      100 |                   |
+  Menu.jsx                                      |      100 |      100 |      100 |      100 |                   |
+  Password.jsx                                  |      100 |      100 |      100 |      100 |                   |
+  Profile.jsx                                   |      100 |      100 |      100 |      100 |                   |
+ src/utils                                      |      100 |      100 |      100 |      100 |                   |
+  extractVideos.js                              |      100 |      100 |      100 |      100 |                   |
+  fns.js                                        |      100 |      100 |      100 |      100 |                   |
+  parseDatetime.js                              |      100 |      100 |      100 |      100 |                   |
+  storage.js                                    |      100 |      100 |      100 |      100 |                   |
+ src/utils/hooks                                |    89.58 |    33.33 |    93.75 |    89.58 |                   |
+  useFetchRelatedVideos.js                      |      100 |      100 |      100 |      100 |                   |
+  useFetchVideoInfo.js                          |      100 |      100 |      100 |      100 |                   |
+  useFetchVideos.js                             |      100 |    33.33 |      100 |      100 |             10,50 |
+  useGapi.js                                    |    54.55 |      100 |    66.67 |    54.55 |       7,8,9,10,12 |
+------------------------------------------------|----------|----------|----------|----------|-------------------|
 
-Test Suites: 9 passed, 9 total
-Tests:       15 passed, 15 total
+Test Suites: 17 passed, 17 total
+Tests:       40 passed, 40 total
 Snapshots:   0 total
-Time:        4.128s
-Ran all test suites related to changed files.
-
-Watch Usage: Press w to show more
+Time:        8s

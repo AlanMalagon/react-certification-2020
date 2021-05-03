@@ -1,13 +1,16 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
-import { useAuth } from '../../providers/Auth';
+//hooks
+import { useAuth0 } from "@auth0/auth0-react";
+import { useGlobal } from '../../providers/Global.provider';
 
 function Private({ children, ...rest }) {
-  const { authenticated } = useAuth();
+  const { isAuthenticated } = useAuth0();
+  const { state } = useGlobal();
 
   return (
-    <Route {...rest} render={() => (authenticated ? children : <Redirect to="/" />)} />
+    <Route {...rest} render={() => ((state.user.authenticated || isAuthenticated) ? children : <Redirect to="/" />)} />
   );
 }
 

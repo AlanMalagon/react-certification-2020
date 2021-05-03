@@ -1,28 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+
+//components
 import { VideoGridItem } from './VideoGridItem/VideoGridItem.component';
 
-
+//styles
+import styled from 'styled-components';
 const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    a{
-      color:black;
-    }
 `;
 
-export const VideosGrid = ({data}) => {
+export const VideosGrid = ({data, location}) => {
 
   return <Container data-testid="videosGrid">
       {
-          data.items.map(video =>
-            <Link key={video.etag} to={`/video/${video.id.videoId}`}>
-              <VideoGridItem key={video.etag}
-              video={video}/>
-            </Link>
+          data.map(video =>
+              <VideoGridItem key={video.id}
+              video={video}
+              location={location}/>
           )
       }
   </Container>;

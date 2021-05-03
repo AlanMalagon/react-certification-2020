@@ -1,14 +1,89 @@
 import React from 'react';
-import {Container, StyledButton, StyledSvg, buttonPressedStyle} from '../HeaderIconStyles';
+import { Link, useLocation } from 'react-router-dom';
+
+//hooks
+import { useAuth0 } from "@auth0/auth0-react";
+import { useGlobal } from '../../../providers/Global.provider';
+
+//components
+import { ProfileSVG } from '../../../svg/Profile';
+
+//styles
+import {Container, buttonPressedStyle} from '../HeaderIconStyles';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import styled from 'styled-components';
+const Avatar = styled.img`
+    border-radius: 50%;
+    height: 36px;
+    width: 36px;
+`;
 
 export const ProfileButton = () => {
-    return <Container data-testid="profileButton">
-       <StyledButton whileTap={buttonPressedStyle}>            
-            <StyledSvg x="0px" y="0px"width="32px" height="32px" viewBox="0 0 45.532 45.532" data-testid="profileIcon">
-                <g>
-                    <path d="M22.766,0.001C10.194,0.001,0,10.193,0,22.766s10.193,22.765,22.766,22.765c12.574,0,22.766-10.192,22.766-22.765 S35.34,0.001,22.766,0.001z M22.766,6.808c4.16,0,7.531,3.372,7.531,7.53c0,4.159-3.371,7.53-7.531,7.53 c-4.158,0-7.529-3.371-7.529-7.53C15.237,10.18,18.608,6.808,22.766,6.808z M22.761,39.579c-4.149,0-7.949-1.511-10.88-4.012 c-0.714-0.609-1.126-1.502-1.126-2.439c0-4.217,3.413-7.592,7.631-7.592h8.762c4.219,0,7.619,3.375,7.619,7.592 c0,0.938-0.41,1.829-1.125,2.438C30.712,38.068,26.911,39.579,22.761,39.579z"/>
-                </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g>
-            </StyledSvg>
-        </StyledButton>
-    </Container>;
+    const { user, isAuthenticated, loginWithPopup, logout } = useAuth0();
+    const location = useLocation();
+    const {state, dispatch } = useGlobal();
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    function deAuthenticate(event) {
+        event.preventDefault();
+        dispatch({type:'logout'});
+    }
+
+    return <>
+        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+            <Container whileTap={buttonPressedStyle} data-testid="profileButton" profile='profile'>
+                {isAuthenticated && <Avatar src={user.picture}/>}
+                {state.user.authenticated && <Avatar src={state.user.avatarUrl}/>}
+                {!(isAuthenticated || state.user.authenticated) && <ProfileSVG/>}
+            </Container>
+        </Button>
+        <Menu
+            id="simple-menu"
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            onClick={()=>dispatch({type:'closeMenu'})}
+        >
+            {
+                !(isAuthenticated || state.user.authenticated) && 
+                <Link to={{pathname:"/login",state:{ background: location }}}>
+                    <MenuItem onClick={handleClose}>Login</MenuItem>
+                </Link>
+            }
+            {
+                !(isAuthenticated || state.user.authenticated) && 
+                <MenuItem onClick={()=>{
+                    handleClose();
+                    loginWithPopup();
+                }}>Auth0</MenuItem>
+            }
+            {
+                (isAuthenticated || state.user.authenticated) &&
+                <Link to='/favorites'>
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                </Link>
+            }
+            {
+                (isAuthenticated || state.user.authenticated) &&
+                <Link to="/" onClick={deAuthenticate}>
+                    <MenuItem onClick={() => {
+                        handleClose();
+                        logout({ returnTo: window.location.origin });
+                    }}>Logout</MenuItem>
+                </Link>
+            }
+        </Menu>
+    </>
 }

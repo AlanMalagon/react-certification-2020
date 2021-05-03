@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useGapi } from '../../utils/hooks/useGapi';
-// const mockData = require('../../mock-data/youtube-video-api.json');
+// const mockData = require('../../mock-data/youtube-video-api-id.json').items[0];
 
 const getRelatedVideos = async(gapi, videoId) =>{
     if(gapi !== null){
@@ -12,18 +12,16 @@ const getRelatedVideos = async(gapi, videoId) =>{
             "id":videoId,
         });
         return { 
-            videos: JSON.parse(body),
+            videoInfo: JSON.parse(body).items[0],
             loading: false
         }
     }
     return { 
-        videos: {
-            items:[]
-        },
+        videoInfo: null,
         loading: true
     };
     // return { 
-    //     videos: mockData,
+    //     videoInfo: mockData,
     //     loading: false
     // };
 }
@@ -31,9 +29,7 @@ const getRelatedVideos = async(gapi, videoId) =>{
 export const useFetchVideoInfo = (videoId) =>{
     const gapi = useGapi();
     const [state, setState] = useState({
-        videos:{
-            items:[]
-        },
+        videoInfo:null,
         loading:true,
     });
 
